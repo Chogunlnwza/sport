@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1046913739735",
+    "project_id": "plume-87eda",
+    "storage_bucket": "plume-87eda.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046913739735:android:346e4ead0b316281227992",
+        "android_client_info": {
+          "package_name": "com.example.plume"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKdsGrlaeWZYlnktkcVme4OMGrxrToomM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
