@@ -16,14 +16,6 @@ A mobile application developed using Flutter that allows users to easily book an
 ### 🎯 Purpose
 This project was developed to practice mobile application development and UI/UX design, focusing on building a real-world booking system.
 
-### 📸 Screenshots
-(ใส่รูปแอพคุณตรงนี้)
-
-### 🚀 Future Improvements
-- Add real-time database (Firebase)
-- User authentication system
-- Payment integration
-
 ## 📱 แอปพลิเคชันจองสนามกีฬา
 
 แอปพลิเคชันมือถือที่พัฒนาด้วย Flutter สำหรับให้ผู้ใช้งานสามารถจองและจัดการการใช้สนามกีฬาได้อย่างสะดวก
@@ -41,8 +33,3 @@ This project was developed to practice mobile application development and UI/UX 
 
 ### 🎯 วัตถุประสงค์ของโปรเจค
 พัฒนาเพื่อฝึกทักษะการสร้างแอปพลิเคชันมือถือและออกแบบ UI/UX โดยจำลองระบบจองที่ใช้งานจริง
-
-### 🚀 พัฒนาเพิ่มเติมในอนาคต
-- เชื่อมต่อฐานข้อมูลจริง (เช่น Firebase)
-- ระบบสมัครสมาชิก / Login
-- ระบบชำระเงินออนไลน์
