@@ -1,6 +1,6 @@
-# sport 
+# Stadium booking app
 
-A new Flutter project.
+This is a sports venue booking system that allows you to select your desired date and time. There's a login system for various users and a QR code payment method. Please report any problems.
 
 ## Getting Started
 
