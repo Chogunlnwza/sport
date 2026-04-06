@@ -1,16 +1,17 @@
-# Stadium booking app
+## 📱 Smart Sports Field Booking App
 
-This is a sports venue booking system that allows you to select your desired date and time. There's a login system for various users and a QR code payment method. Please report any problems.
+A mobile application developed using Flutter that allows users to easily book and manage sports field reservations.
 
-## Getting Started
+### 🔹 Features
+- 📅 Booking system for selecting date and time
+- 🏟️ Browse available sports fields
+- 🧾 Reservation management
+- 📱 User-friendly interface
 
-This project is a starting point for a Flutter application.
+### 🛠️ Technologies Used
+- Flutter (Mobile Development)
+- Dart
+- Mock Data / API simulation
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🎯 Purpose
+This project was developed to practice mobile application development and UI/UX design, focusing on building a real-world booking system.
