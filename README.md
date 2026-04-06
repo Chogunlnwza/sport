@@ -24,8 +24,6 @@ This project was developed to practice mobile application development and UI/UX 
 - User authentication system
 - Payment integration
 
-------------------------------------------------------------------------------
-
 ## 📱 แอปพลิเคชันจองสนามกีฬา
 
 แอปพลิเคชันมือถือที่พัฒนาด้วย Flutter สำหรับให้ผู้ใช้งานสามารถจองและจัดการการใช้สนามกีฬาได้อย่างสะดวก
