@@ -7,7 +7,7 @@
 
 ---
 
-<h2 id="english">🇬🇧 English Version</h2>
+<h2 id="english">English Version</h2>
 
 ### 🔹 Features
 - 🔐 **Authentication**: Secure login and signup system using Firebase Auth.
@@ -29,7 +29,7 @@ This project is configured for seamless deployment on Vercel as a Flutter Web ap
 
 ---
 
-<h2 id="ภาษาไทย">🇹🇭 ภาษาไทย</h2>
+<h2 id="ภาษาไทย">ภาษาไทย</h2>
 
 ### 🔹 ฟีเจอร์หลัก
 - 🔐 **ระบบสมาชิก**: สมัครสมาชิกและเข้าสู่ระบบอย่างปลอดภัยด้วย Firebase Auth
