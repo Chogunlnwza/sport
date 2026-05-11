@@ -254,34 +254,32 @@ class _HomeState extends State<Home> {
                           );
                         },
                         child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            IntrinsicHeight(
-                              child: ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(16),
-                                  bottomLeft: Radius.circular(16),
-                                ),
-                                child: imageUrl != null
-                                    ? Image.network(
-                                        imageUrl,
-                                        width: 120,
-                                        height: 110,
-                                        fit: BoxFit.cover,
-                                        errorBuilder: (context, error, stackTrace) => Container(
-                                          width: 120,
-                                          height: 110,
-                                          color: Colors.grey[200],
-                                          child: const Icon(Icons.image_not_supported, color: Colors.grey),
-                                        ),
-                                      )
-                                    : Container(
+                            ClipRRect(
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(16),
+                                bottomLeft: Radius.circular(16),
+                              ),
+                              child: imageUrl != null
+                                  ? Image.network(
+                                      imageUrl,
+                                      width: 120,
+                                      height: 110,
+                                      fit: BoxFit.cover,
+                                      errorBuilder: (context, error, stackTrace) => Container(
                                         width: 120,
                                         height: 110,
                                         color: Colors.grey[200],
-                                        child: const Icon(Icons.sports, color: Colors.grey, size: 40),
+                                        child: const Icon(Icons.image_not_supported, color: Colors.grey),
                                       ),
-                              ),
+                                    )
+                                  : Container(
+                                      width: 120,
+                                      height: 110,
+                                      color: Colors.grey[200],
+                                      child: const Icon(Icons.sports, color: Colors.grey, size: 40),
+                                    ),
                             ),
                             Expanded(
                               child: Padding(
