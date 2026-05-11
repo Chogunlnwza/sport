@@ -32,12 +32,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBKdsGrlaeWZYlnktkcVme4OMGrxrToomM',
+    apiKey: 'AIzaSyDoEbjtWARQgH2O_OUf6vdJdaE8czzSUZk',
     appId: '1:1046913739735:web:0ed29a252bcfed0a227992',
     messagingSenderId: '1046913739735',
     projectId: 'plume-87eda',
     authDomain: 'plume-87eda.firebaseapp.com',
     storageBucket: 'plume-87eda.firebasestorage.app',
+    measurementId: 'G-SEK1EZ2H8D',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
