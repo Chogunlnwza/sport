@@ -33,7 +33,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBKdsGrlaeWZYlnktkcVme4OMGrxrToomM',
-    appId: '1:1046913739735:web:346e4ead0b316281227992',
+    appId: '1:1046913739735:web:0ed29a252bcfed0a227992',
     messagingSenderId: '1046913739735',
     projectId: 'plume-87eda',
     authDomain: 'plume-87eda.firebaseapp.com',
