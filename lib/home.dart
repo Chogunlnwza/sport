@@ -115,7 +115,7 @@ class _HomeState extends State<Home> {
                   return Center(child: CircularProgressIndicator());
                 }
                 if (snapshot.hasError) {
-                  return Center(child: Text('เกิดข้อผิดพลาด'));
+                  return Center(child: Text('เกิดข้อผิดพลาด: ${snapshot.error}'));
                 }
                 if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
                   return Center(child: Text('ไม่มีข้อมูลสนามกีฬา'));
