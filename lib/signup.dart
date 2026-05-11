@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:plume/all.dart';
 import 'package:get/get.dart';
@@ -16,8 +15,17 @@ class _SignupState extends State<Signup> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController nickname = TextEditingController();
+  bool _isLoading = false;
 
   signup() async {
+    if (email.text.trim().isEmpty || password.text.trim().isEmpty || nickname.text.trim().isEmpty) {
+      Get.snackbar(
+        "Warning", "Please fill in all fields.",
+        backgroundColor: Colors.orange.withOpacity(0.9), colorText: Colors.white,
+      );
+      return;
+    }
+    setState(() => _isLoading = true);
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
@@ -34,109 +42,89 @@ class _SignupState extends State<Signup> {
         'email': email.text.trim(),
       });
 
-      Get.offAll(All());
+      Get.offAll(const All());
     } catch (e) {
       Get.snackbar(
         "Signup Failed",
         e.toString(),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.redAccent.withOpacity(0.9),
         colorText: Colors.white,
         snackPosition: SnackPosition.BOTTOM,
       );
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: Text("Sign Up", style: GoogleFonts.poppins()),
-        centerTitle: true,
-        backgroundColor: Colors.teal,
+        title: const Text("Create Account"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Create Account",
-              style: GoogleFonts.poppins(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              "Register to shop your favorite styles!",
-              style:
-                  GoogleFonts.poppins(fontSize: 16, color: Colors.grey[700]),
-            ),
-            const SizedBox(height: 30),
-            TextField(
-              controller: nickname,
-              decoration: InputDecoration(
-                labelText: "Nickname",
-                prefixIcon: Icon(Icons.person_outline),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              controller: email,
-              decoration: InputDecoration(
-                labelText: "Email",
-                prefixIcon: Icon(Icons.email_outlined),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-              keyboardType: TextInputType.emailAddress,
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              controller: password,
-              decoration: InputDecoration(
-                labelText: "Password",
-                prefixIcon: Icon(Icons.lock_outline),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-              obscureText: true,
-            ),
-            const SizedBox(height: 30),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton.icon(
-                onPressed: signup,
-                icon: Icon(Icons.check_circle_outline),
-                label: Text(
-                  "Sign Up",
-                  style: GoogleFonts.poppins(fontSize: 16),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Join Us!",
+                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
                   ),
                 ),
-              ),
-            )
-          ],
+                const SizedBox(height: 8),
+                Text(
+                  "Register to book your favorite sports venues.",
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: Colors.grey[600],
+                  ),
+                ),
+                const SizedBox(height: 40),
+                TextField(
+                  controller: nickname,
+                  decoration: const InputDecoration(
+                    labelText: "Nickname",
+                    hintText: "Enter your nickname",
+                    prefixIcon: Icon(Icons.person_outline),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                TextField(
+                  controller: email,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    labelText: "Email",
+                    hintText: "Enter your email",
+                    prefixIcon: Icon(Icons.email_outlined),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                TextField(
+                  controller: password,
+                  decoration: const InputDecoration(
+                    labelText: "Password",
+                    hintText: "Create a password",
+                    prefixIcon: Icon(Icons.lock_outline),
+                  ),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 40),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: _isLoading ? null : signup,
+                    child: _isLoading 
+                        ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+                        : const Text("Sign Up", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
