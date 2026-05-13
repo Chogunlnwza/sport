@@ -1,4 +1,4 @@
-# 📱 Plume - Smart Sports Field Booking App
+# 📱 Smart Sports Field Booking App
 
 <div align="center">
   <p>A comprehensive mobile and web application developed using Flutter that allows users to easily book and manage sports field reservations.</p>
